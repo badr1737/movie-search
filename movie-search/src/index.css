@@ -1,0 +1,204 @@
+﻿/* 🌑 الخلفية */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🏠 الحاوية الرئيسية */
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 🎬 عنوان الصفحة */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+    .search-box input:focus {
+        box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+    }
+
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+    .search-box input:focus {
+        box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+    }
+
+/* ✅ تحسين زر البحث */
+.search-box button {
+    padding: 12px 15px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+    .search-box button:hover {
+        background: linear-gradient(135deg, #d63031, #e17055);
+    }
+
+
+
+/* 🌀 Loader */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid white;
+    border-top: 5px solid #ff416c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ⚠️ رسالة الخطأ */
+.error {
+    color: red;
+    font-size: 1.2rem;
+}
+
+/* 🎥 كروت الأفلام */
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.movie-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 180px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+    .movie-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+    }
+
+    /* ✅ تحسين الصور */
+    .movie-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .movie-card:hover img {
+        transform: scale(1.1);
+    }
+
+
+/* 🎞️ نافذة التفاصيل */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 350px; /* تقليل العرض */
+    max-height: 70vh; /* تقليل الطول */
+    overflow-y: auto;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+    backdrop-filter: blur(10px); /* 🔹 تأثير الضبابية للخلفية */
+}
+
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+    .close-btn:hover {
+        background: darkred;
+    }
